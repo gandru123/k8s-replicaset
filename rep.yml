@@ -18,7 +18,7 @@ spec:
     metadata:
       labels:
         app: html
-      name: pod-level
+
       
       
     spec:
@@ -26,8 +26,7 @@ spec:
         - name: css-image
           image: gandru/villagehtml:village-app
           ports:
-            - containerPort: 8080
-              port: 80
+            - containerPort: 80
               protocol: TCP
           startupProbe:
             httpGet:
@@ -47,7 +46,8 @@ spec:
           readinessProbe:
             exec:
               command:
-                - echo hi
+                - echo 
+                - hi
             initialDelaySeconds: 2
             periodSeconds: 6
             successThreshold: 1
