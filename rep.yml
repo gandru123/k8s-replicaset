@@ -1,10 +1,9 @@
 apiVersion: apps/v1
-kind: Deployment
+kind: ReplicaSet
 metadata:
   name: replica-pod
   labels:
     app: css-temp
-    env: dev
   namespace: dev-namespace
   annotations:
     myrepo: giving-repo
@@ -18,15 +17,13 @@ spec:
     metadata:
       labels:
         app: html
-
-      
-      
+      name: tem
     spec:
       containers:
         - name: css-image
           image: gandru/villagehtml:village-app
           ports:
-            - containerPort: 80
+            - containerPort: 8080
               protocol: TCP
           startupProbe:
             httpGet:
