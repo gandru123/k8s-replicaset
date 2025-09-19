@@ -20,7 +20,7 @@ spec:
     spec:
       containers:
         - name: css-image
-          image: 
+          image: gandru/villagehtml:village-app
           ports:
             - containerPort: 80
               protocol: TCP
