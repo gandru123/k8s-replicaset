@@ -20,7 +20,7 @@ spec:
     spec:
       containers:
         - name: css-image
-          image: gandru/villagehtml:village-app
+          image: 
           ports:
             - containerPort: 80
               protocol: TCP
@@ -28,26 +28,29 @@ spec:
             httpGet:
               path: /
               port: 80         
-            initialDelaySeconds: 10
-            periodSeconds: 2
-            successThreshold: 1
-            failureThreshold: 2
+            # initialDelaySeconds: 10
+            # periodSeconds: 2
+            # successThreshold: 1
+            # failureThreshold: 2
           livenessProbe:
-            tcpSocket:
-              port: 80           
-            initialDelaySeconds: 2
-            periodSeconds: 6
-            successThreshold: 1
-            failureThreshold: 2
+            httpGet:
+              path: /
+              port: 80
+            # tcpSocket:
+            #   port: 80           
+            # initialDelaySeconds: 2
+            # periodSeconds: 6
+            # successThreshold: 1
+            # failureThreshold: 2
           readinessProbe:
             exec:
               command:
                 - echo
                 - hi
-            initialDelaySeconds: 2
-            periodSeconds: 6
-            successThreshold: 1
-            failureThreshold: 2
+            # initialDelaySeconds: 2
+            # periodSeconds: 6
+            # successThreshold: 1
+            # failureThreshold: 2
           resources:
             requests:
               cpu: 200m
