@@ -23,7 +23,6 @@ spec:
           image: gandru/villagehtml:village-app
           ports:
             - containerPort: 8080
-              port: 8080   
               protocol: TCP
           startupProbe:
             httpGet:
